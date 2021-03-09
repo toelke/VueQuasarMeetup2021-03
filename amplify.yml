@@ -1,17 +1,22 @@
 version: 1
+appRoot: code/
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
 frontend:
   phases:
     # IMPORTANT - Please verify your build commands
     build:
       commands:
-        - cd code
         - npm install
         - npx quasar build
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: code/dist/spa
+    baseDirectory: dist/spa
     files:
       - '**/*'
   cache:
     paths:
-      - code/node_modules
+      - node_modules
