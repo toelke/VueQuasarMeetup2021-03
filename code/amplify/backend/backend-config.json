@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "code843c756c": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
