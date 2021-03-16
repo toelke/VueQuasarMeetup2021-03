@@ -7,6 +7,10 @@
         <q-toolbar-title>
           Photo App
         </q-toolbar-title>
+        <div class="absolute-right" v-if="loggedIn">
+          {{ this.user }}
+          <q-btn @click="logout()" flat label="LogOut" class="right" />
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -38,6 +42,8 @@ export default {
   data() {
     return {
       leftDrawerOpen: false,
+      loggedIn: false,
+      user: '',
       menuList: [
         {
           title: 'Upload',
